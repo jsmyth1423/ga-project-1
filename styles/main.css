@@ -16,9 +16,10 @@ body {
 }
 
 .grid div {
-  border: 1px solid navy;
+  border: 1px solid black;
   height: 20%;
-  width: 11.11%;
+  width: 10%;
+  background-color: #008c68;
 }
 
 .grid-wrapper {
@@ -28,13 +29,9 @@ body {
 }
 
 .grid div.ship {
-  background-image: url('https://www.pngitem.com/pimgs/m/501-5011901_space-invaders-ship-transparent-hd-png-download.png');
+  background-image: url(/images/coder.png);
   background-repeat: no-repeat;
-  background-size: contain;
-}
-
-.grid div.edges {
-  background-color: red;
+  background-size: cover;
 }
 
 .grid div.alien {
@@ -42,9 +39,15 @@ body {
 }
 
 .grid div.laser {
-  background-color: blue;
+background-image: url('https://i.redd.it/puq2y2t4nkt51.jpg');
+background-size: contain;
+background-repeat: no-repeat;
 }
 
 .grid div.explosion {
   background-color: aqua;
+}
+
+.score-display {
+  text-align: center;
 }
