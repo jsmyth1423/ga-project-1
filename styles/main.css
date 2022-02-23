@@ -12,13 +12,13 @@ body {
   height: 100%;
   justify-content: center;
   height: 300px;
-  width: 300px;
+  width: 600px;
 }
 
 .grid div {
   border: 1px solid navy;
   height: 20%;
-  width: 20%;
+  width: 11.11%;
 }
 
 .grid-wrapper {
@@ -31,4 +31,20 @@ body {
   background-image: url('https://www.pngitem.com/pimgs/m/501-5011901_space-invaders-ship-transparent-hd-png-download.png');
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.grid div.edges {
+  background-color: red;
+}
+
+.grid div.alien {
+  background-color: green;
+}
+
+.grid div.laser {
+  background-color: blue;
+}
+
+.grid div.explosion {
+  background-color: aqua;
 }
