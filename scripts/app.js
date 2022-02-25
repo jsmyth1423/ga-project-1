@@ -125,7 +125,7 @@ function alienBomb() {
     cells[currentBombLocation].classList.remove('bomb')
     currentBombLocation += width
     cells[currentBombLocation].classList.add('bomb')
-    if (currentBombLocation >= 90) {
+    if (currentBombLocation >= 99) {
       clearInterval(bombTimer)
     }
 
