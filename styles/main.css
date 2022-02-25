@@ -77,28 +77,28 @@ button {
 }
 
 .grid div.ship {
-  background-image: url(./images/mario.png);
+  background-image: url(../images/mario.png);
   background-repeat: no-repeat;
   background-size: fill;
   background-position: center;
 }
 
 .grid div.alien {
-  background-image: url(./images/bowser-removebg-preview.png);
+  background-image: url(../images/bowser-removebg-preview.png);
   background-repeat: no-repeat;
   background-size: fill;
 }
 
 .grid div.laser {
-background-image: url(./images/fireball-removebg-preview.png);
+background-image: url(../images/fireball-removebg-preview.png);
 background-size: contain;
 background-repeat: no-repeat;
 }
 
 .grid div.explosion {
-background-image: url(./images/pow-removebg-preview.png);
+background-image: url(../images/pow-removebg-preview.png);
 }
 
 .grid div.bomb {
-background-image: url(./images/dd7oz63-c454d3e6-db3f-473a-a9a4-12c80d73ad39-removebg-preview.png);
+background-image: url(../images/dd7oz63-c454d3e6-db3f-473a-a9a4-12c80d73ad39-removebg-preview.png);
 }
