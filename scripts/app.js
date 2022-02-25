@@ -1,24 +1,26 @@
 // DOM connection to the grid
 const grid = document.querySelector('.grid');
 const scoreDisplay = document.querySelector('.score-display')
+const livesDisplay = document.querySelector('.lives-display')
+const startButton = document.querySelector('.start-button')
+const restartButton = document.querySelector('.restart-button')
+
 // Setting the size of the grid 
-//? will likely have to be adjusted? need to figure out div size scaling in css to keep even
 const width = 10;
 const gridCellCount = width * width;
 const cells = Array.from(document.querySelectorAll('.grid div'))
-// ? array for edges - will need to update if the grid becomes bigger
-const edges = [0, 9, 10, 19, 20, 29, 30, 39, 40, 49, 50, 59, 60, 69, 70, 79, 80, 89, 90, 99]
-
-// Setting the initial ship location
+// Setting the initial ship location and lives
 let shipLocation = 95
-
+let lives = 3
 // Setting the initial aliens location
 let alienLocations = [2, 3, 4, 5, 6, 7, 12, 13, 14, 15, 16, 17, 22, 23, 24, 25, 26, 27]
-let direction = 1
+let moveDirection = 1
 let movingRight = true
 let aliensKilled = []
 let score = 0
-let aliensMoving
+let aliensMoving = 0
+let bombDropping = 0
+
 // Functions to both add and remove the ship, using DOM css class editing
 function addShip() {
   cells[shipLocation].classList.add('ship')
@@ -34,11 +36,10 @@ function createGrid() {
     cell.setAttribute('data-id', i);
     cells.push(cell);
     grid.appendChild(cell);
-    if (edges.includes(i)) cell.classList.add('edges')
+
   }
   addShip()
 }
-
 createGrid()
 
 function makeAliens() {
@@ -48,7 +49,6 @@ function makeAliens() {
     }
   }
 }
-
 makeAliens()
 
 function removeAliens() {
@@ -56,7 +56,6 @@ function removeAliens() {
     cells[alienLocations[i]].classList.remove('alien')
   }
 }
-
 
 function playerControl(event) {
   removeShip()
@@ -75,55 +74,85 @@ function playerControl(event) {
   addShip() //  add ship back at the new location
 }
 
-
-
-
 function moveAliens() {
   const rightEdge = alienLocations[alienLocations.length - 1] % width === width - 1
-  const leftEdge = (alienLocations[0] % width === 0) 
+  const leftEdge = (alienLocations[0] % width === 0)
   removeAliens()
 
   if (rightEdge && movingRight) {
     for (let i = 0; i < alienLocations.length; i++) {
       alienLocations[i] += width + 1
-      direction = -1
+      moveDirection = -1
       movingRight = false
     }
   }
   if (leftEdge && !movingRight) {
     for (let i = 0; i < alienLocations.length; i++) {
       alienLocations[i] += width - 1
-      direction = 1
+      moveDirection = 1
       movingRight = true
     }
   }
   for (let i = 0; i < alienLocations.length; i++) {
-    alienLocations[i] += direction
+    alienLocations[i] += moveDirection
   }
   makeAliens()
 
   if (cells[shipLocation].classList.contains('alien', 'ship')) {
     scoreDisplay.innerHTML = 'You Lost!'
     clearInterval(aliensMoving)
+    clearInterval(bombDropping)
   }
 
   for (let i = 0; i < alienLocations.length; i++) {
-    console.log(alienLocations[i])
-    if (alienLocations[i] >= 99) {
+    if (alienLocations[i] >= 100) {
       scoreDisplay.innerHTML = 'You Lost!'
       clearInterval(aliensMoving)
+      clearInterval(bombDropping)
     }
-  } 
+  }
   if (aliensKilled.length === alienLocations.length) {
     scoreDisplay.innerHTML = 'You won!'
     clearInterval(aliensMoving)
+    clearInterval(bombDropping)
   }
-
 }
 
-// aliensMoving = setInterval(moveAliens, 200)
+function alienBomb() {
+  let currentBombLocation = alienLocations[Math.floor(Math.random() * alienLocations.length)]
+  let bombTimer = setInterval(moveBomb, 300)
+  function moveBomb() {
+    cells[currentBombLocation].classList.remove('bomb')
+    currentBombLocation += width
+    cells[currentBombLocation].classList.add('bomb')
+    if (currentBombLocation >= 90) {
+      clearInterval(bombTimer)
+    }
 
+    if (cells[currentBombLocation].classList.contains('ship')) {
+      cells[currentBombLocation].classList.remove('bomb')
+      lives--
+      livesDisplay.innerHTML = `Lives: ${lives}`
+    }
+    if (lives === 0) {
+      scoreDisplay.innerHTML = 'You Lost!'
+      clearInterval(bombTimer)
+      clearInterval(aliensMoving)
+      clearInterval(bombDropping)
+    }
+  }
+}
 
+function startGame() {
+  bombDropping = setInterval(alienBomb, 1500)
+  aliensMoving = setInterval(moveAliens, 1000)
+}
+
+function restartGame() {
+  window.location.reload()
+}
+startButton.addEventListener('click', startGame)
+restartButton.addEventListener('click', restartGame)
 
 function shoot(event) {
   let laserTimer = 0
@@ -138,29 +167,32 @@ function shoot(event) {
       cells[currentLaserLocation].classList.remove('alien')
       cells[currentLaserLocation].classList.add('explosion')
 
-      setTimeout(() => cells[currentLaserLocation].classList.remove('explosion'), 400)
+      setTimeout(() => cells[currentLaserLocation].classList.remove('explosion'), 500)
       clearInterval(laserTimer)
 
       const alienKilled = alienLocations.indexOf(currentLaserLocation)
       aliensKilled.push(alienKilled)
-      console.log(aliensKilled)
       score++
       scoreDisplay.innerHTML = `score: ${score}`
-      console.log(score)
     }
   }
   switch (event.keyCode) {
-    case 32:
+    case 67:
       laserTimer = setInterval(moveLaser, 100)
   }
 }
 
 document.addEventListener('keydown', shoot)
-
-
-// making the DOM listen for a keyup event in which case it calls the playerControl function
-
 document.addEventListener('keyup', playerControl)
 
 
-// 8 || 17 || 26 || 35 || 44 || 53 || 62 || 71 || 80 || 89 || 98
+// document.getElementsByClassName('alien').style.transform = 'scaleX(-1)'
+
+
+// const nextLevelButton = document.querySelector('next-level')
+// function startGame2() {
+//   bombDropping = setInterval(alienBomb, 750)
+//   aliensMoving = setInterval(moveAliens, 750)
+// }
+
+// nextLevelButton.addEventListener('click', startGame2)

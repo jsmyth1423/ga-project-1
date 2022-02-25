@@ -1,53 +1,101 @@
 * {
   box-sizing: border-box;
+  color: white;
+  font-family: 'Indie Flower';
+  letter-spacing: 10px;
 }
 body {
-  height: 100vh;
+  height: 80vh;
   margin: 0;
+  background-color: black;
 }
+
+h1 {
+  text-align: left;
+  margin: 0 0 0 50px;
+}
+
+.startwrapper {
+  display: flex;
+  justify-content: space-around;
+}
+button {
+  height: 50px;
+  width: 150px;
+  font-size: 30px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+.start-button {
+  background-color: black;
+  border: green 1px solid;
+  color: green;
+}
+.restart-button {
+  background-color:black;
+  border: red;
+  color: red;
+  border: 1px red solid;
+}
+
+.start-button:hover {
+  background-color: green;
+  color: black;
+}
+.restart-button:hover {
+  background-color: red;
+  color: black;
+}
+
 .grid {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  height: 100%;
   justify-content: center;
-  height: 300px;
   width: 600px;
+  border: green solid 5px;
+  background-image: url('https://garden.spoonflower.com/c/5542349/p/f/m/It0lEQNANvXXWt8TwFFcPj-94_Nfuu0oPxNmaNcLN9szWN_IcHzuFA/5542349-brick-block-by-periwinkleinstitches.jpg');
+  margin: 50px;
 }
 
 .grid div {
-  border: 1px solid black;
-  height: 20%;
+  height: 10%;
   width: 10%;
-  background-color: #008c68;
+  background-size: contain;
+  background-repeat: no-repeat;
+  
 }
 
 .grid-wrapper {
-  height: 90vh;
+  height: 80vh;
   display: flex;
   justify-content: center;
+
 }
 
 .grid div.ship {
-  background-image: url(/images/coder.png);
+  background-image: url(/images/mario.png);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: fill;
+  background-position: center;
 }
 
 .grid div.alien {
-  background-color: green;
+  background-image: url(/images/bowser-removebg-preview.png);
+  background-repeat: no-repeat;
+  background-size: fill;
 }
 
 .grid div.laser {
-background-image: url('https://i.redd.it/puq2y2t4nkt51.jpg');
+background-image: url(/images/fireball-removebg-preview.png);
 background-size: contain;
 background-repeat: no-repeat;
 }
 
 .grid div.explosion {
-  background-color: aqua;
+background-image: url(/images/pow-removebg-preview.png);
 }
 
-.score-display {
-  text-align: center;
+.grid div.bomb {
+background-image: url(/images/dd7oz63-c454d3e6-db3f-473a-a9a4-12c80d73ad39-removebg-preview.png);
 }
