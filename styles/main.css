@@ -47,6 +47,9 @@ button {
   color: black;
 }
 
+.keybinds {
+  letter-spacing: 5px;
+}
 .grid {
   align-items: center;
   display: flex;
