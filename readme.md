@@ -38,4 +38,14 @@ The majority of project time was spent on the above issues.
 
 1. Originally I tried to define the edges of the area manually in an array, but found an easier solution being using modulus with the width of the grid pre-defined.
 
-(![image](https://user-images.githubusercontent.com/53213823/166149142-b5a20b3e-443e-4434-8717-51184aaac816.png)
+![image](https://user-images.githubusercontent.com/53213823/166149142-b5a20b3e-443e-4434-8717-51184aaac816.png)
+
+2. The below function handled Alien movement, with a series of if statements to check for the edges and then subsequent actions to create the moving block effect.
+
+![image](https://user-images.githubusercontent.com/53213823/166149254-334e8601-511c-4066-9280-d80a2ba52de1.png)
+
+This function also contained the logic for win and loss based on 3 factors, if the aliens collided with the player ship, if the aliens reached the bottom of the screen, as well as if the aliens were all destroyed.
+
+![image](https://user-images.githubusercontent.com/53213823/166149286-63b6e2c9-d247-4d99-a53a-3559d38da9b9.png)
+
+
