@@ -55,3 +55,10 @@ This function also contained the logic for win and loss based on 3 factors, if t
 
 ![image](https://user-images.githubusercontent.com/53213823/166149386-d42a6521-f75a-444f-b99a-61ddbbce1f92.png)
 
+---
+
+## Ideals 
+
+1. Sound, just generally makes a game feel more game-y!
+2. Collision detection between missile and alien bombs so that the player can destroy them rather than just dodging.
+3. Learning how to make the movement of the aliens more smooth, perhaps CSS animations.
