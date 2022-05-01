@@ -40,6 +40,7 @@ The majority of project time was spent on the above issues.
 
 ![image](https://user-images.githubusercontent.com/53213823/166149142-b5a20b3e-443e-4434-8717-51184aaac816.png)
 
+---
 2. The below function handled Alien movement, with a series of if statements to check for the edges and then subsequent actions to create the moving block effect.
 
 ![image](https://user-images.githubusercontent.com/53213823/166149254-334e8601-511c-4066-9280-d80a2ba52de1.png)
@@ -48,4 +49,9 @@ This function also contained the logic for win and loss based on 3 factors, if t
 
 ![image](https://user-images.githubusercontent.com/53213823/166149286-63b6e2c9-d247-4d99-a53a-3559d38da9b9.png)
 
+---
+
+3. The final challenge was using timeouts for the missile movement as well as checking for collision with the alien, detailed below.
+
+![image](https://user-images.githubusercontent.com/53213823/166149386-d42a6521-f75a-444f-b99a-61ddbbce1f92.png)
 
