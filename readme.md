@@ -58,6 +58,14 @@ This function also contained the logic for win and loss based on 3 factors, if t
 ![image](https://user-images.githubusercontent.com/53213823/166149386-d42a6521-f75a-444f-b99a-61ddbbce1f92.png)
 
 ---
+## Lessons Learned
+1. Good planning makes all the difference:
+  For the areas I had planned out I flew through the coding since I was already fairly sure of the direction
+  Areas which I had not considered took much longer, in part due to complexity but also not having any direction to work towards.
+  
+2. Expectations are hard to gauge when you're starting out:
+  I was unsure of how much I would be able to get done if much at all within the 1 week period, having the stretch goals was useful as I allowed myself to work through   the main project quickly in order to try and implement them, which was a relief as I just about got my initial goals done, stretch aside. As projects have come and     gone I still find it difficult to gauge how long it will take when working in a new area.
+---
 
 ## Ideals 
 
