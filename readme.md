@@ -36,5 +36,6 @@ The primary issues were as follows:
 
 The majority of project time was spent on the above issues.
 
-1. Originally I tried to define the edges of the area manually in an array, but found an easier solution being using modulo with the width of the grid pre-defined.
+1. Originally I tried to define the edges of the area manually in an array, but found an easier solution being using modulus with the width of the grid pre-defined.
+
 (![image](https://user-images.githubusercontent.com/53213823/166149142-b5a20b3e-443e-4434-8717-51184aaac816.png)
