@@ -21,4 +21,7 @@ C to shoot
 
 ---
 
+## The Plan: 
 ![alt text](https://i.imgur.com/IVZ0dIG.png)
+
+I wireframed my basic idea as well as the steps I thought I would have to take in order to making a minimum viable product. This gave me a solid baseline of steps to work through.
