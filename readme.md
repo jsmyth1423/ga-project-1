@@ -25,3 +25,16 @@ C to shoot
 ![alt text](https://i.imgur.com/IVZ0dIG.png)
 
 I wireframed my basic idea as well as the steps I thought I would have to take in order to making a minimum viable product. This gave me a solid baseline of steps to work through.
+
+## Key Challenges:
+
+The primary issues were as follows:
+1. Stopping the player character from moving onto and beyond the edges of the screen.
+2. Making the aliens drop one and move in the other direction once colliding with an edge.
+3. Collision detection between Alien & Player missile.
+
+
+The majority of project time was spent on the above issues.
+
+1. Originally I tried to define the edges of the area manually in an array, but found an easier solution being using modulo with the width of the grid pre-defined.
+(![image](https://user-images.githubusercontent.com/53213823/166149142-b5a20b3e-443e-4434-8717-51184aaac816.png)
