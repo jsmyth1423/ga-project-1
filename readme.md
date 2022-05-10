@@ -23,6 +23,11 @@ C to shoot
 
 ---
 
+## Tools Used:
+* HTML
+* CSS
+* JavaScript
+
 ## The Plan: 
 ![alt text](https://i.imgur.com/IVZ0dIG.png)
 
